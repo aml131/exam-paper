@@ -6,8 +6,6 @@ const paperImg = [
   "../assets/exam5.png",
   "../assets/exam6.png"
 ]
-const sliceSound = document.getElementById("sliceAudio")
-const missSound= document.getElementById('Miss')
 const gameBoard = document.getElementsByClassName("gameBoard")[0]
 const scoreDisplay = document.getElementById("score");
 const missesDisplay = document.getElementById("misses");
@@ -19,6 +17,7 @@ let score = 0
 let misses = 0
 let papers = []
 let gameOver = false
+let youWon= false
 /*-------------------------------- Functions --------------------------------*/
 function spawnPaper() {
   const img = new Image();
@@ -51,9 +50,7 @@ function updatePapers() {
       papers.splice(i, 1);
       misses++;
       missesDisplay.textContent = misses;
-      if (missSound) missSound.play();
       if (misses >= 3) gameOver = true;
-      if (gameOver) gameOver.play();
 
     }
   }
@@ -73,9 +70,16 @@ function drawGameOver() {
   ctx.fillStyle = "#fff";
   ctx.font = "60px Pixelify Sans, sans-serif";
   ctx.textAlign = "center";
-  ctx.fillText("Game Over", canvas.width / 2, canvas.height / 2);
+  ctx.fillText("You Lose", canvas.width / 2, canvas.height / 2);
 }
-
+function drawYouWon() {
+  ctx.fillStyle = "rgba(26, 255, 0, 0.7)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "#fff";
+  ctx.font = "60px Pixelify Sans, sans-serif";
+  ctx.textAlign = "center";
+  ctx.fillText("You Won !", canvas.width / 2, canvas.height / 2);
+}
 function checkSlice(mouseX, mouseY) {
   for (const paper of papers) {
     if (
@@ -88,15 +92,20 @@ function checkSlice(mouseX, mouseY) {
       paper.sliced = true;
       score++;
       scoreDisplay.textContent = score;
-      if (sliceSound) sliceSound.play();
+      if (score >= 5) youWon = true;
+
     }
   }
 }
 
 function gameLoop() {
   if (gameOver) {
-    drawGameOver();
-    return;
+    drawGameOver()
+    return
+  }
+  if (youWon){
+    drawYouWon()
+    return
   }
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
