@@ -12,6 +12,10 @@ const missesDisplay = document.getElementById("misses");
 const canvas = document.getElementById("myCanvas")
 const ctx = canvas.getContext("2d")
 const image = document.getElementById('school')
+const gameOverAudio = document.getElementById('gameOverAudio')
+const slicerAudio = document.getElementById('sliceAudio')
+const missAudio = document.getElementById('missAudio')
+const winAudio = document.getElementById('winAudio')
 
 let score = 0
 let misses = 0
@@ -50,6 +54,7 @@ function updatePapers() {
       papers.splice(i, 1);
       misses++;
       missesDisplay.textContent = misses;
+      missAudio.play()
       if (misses >= 3) gameOver = true;
 
     }
@@ -92,6 +97,7 @@ function checkSlice(mouseX, mouseY) {
       paper.sliced = true;
       score++;
       scoreDisplay.textContent = score;
+      slicerAudio.play()
       if (score >= 5) youWon = true;
 
     }
@@ -101,10 +107,14 @@ function checkSlice(mouseX, mouseY) {
 function gameLoop() {
   if (gameOver) {
     drawGameOver()
+    gameOverAudio.play()
+
     return
   }
   if (youWon){
     drawYouWon()
+    winAudio.play()
+
     return
   }
 
