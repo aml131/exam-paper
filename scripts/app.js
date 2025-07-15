@@ -16,6 +16,7 @@ const gameOverAudio = document.getElementById('gameOverAudio')
 const slicerAudio = document.getElementById('sliceAudio')
 const missAudio = document.getElementById('missAudio')
 const winAudio = document.getElementById('winAudio')
+const restartBtn = document.getElementsByClassName("myButton")[0]
 
 let score = 0
 let misses = 0
@@ -124,6 +125,7 @@ function gameLoop() {
   requestAnimationFrame(gameLoop);
 }
 
+
 /*----------------------------- Event Listeners -----------------------------*/
 window.addEventListener("DOMContentLoaded", function () {
 
@@ -136,4 +138,17 @@ window.addEventListener("DOMContentLoaded", function () {
     const mouseY = event.clientY - rect.top;
     checkSlice(mouseX, mouseY);
   });
+  restartBtn.addEventListener("click",()=>{
+score = 0
+misses = 0
+papers = []
+gameOver = false
+youWon= false
+ scoreDisplay.textContent = score
+  missesDisplay.textContent = misses
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+  gameLoop()
+  })
 });
