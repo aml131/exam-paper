@@ -16,7 +16,7 @@ body {
 
 }
 
-.gameBoard {
+#myCanvas {
     background-color: white;
     display: flex;
     justify-content: center;
@@ -27,12 +27,6 @@ body {
 
 }
 
-.gameBoard img {
-    width: 900px;
-    height: auto;
-    opacity: 0.8;
-    border-radius: 30px;
-}
 
 .ScoreBoard {
     color: #4A4539;
