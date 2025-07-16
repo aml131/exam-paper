@@ -11,4 +11,15 @@ My game is inspired by Fruit Ninja. Basically it has papers falling from the top
 - Git
 - Canva (to design the background)
 - Pixilart (to paint images)
-  
+## Game Features
+- Simple UI
+- Sounds for every scenario
+- Counter for score + misses
+- Start page
+## Code Overview
+The game was made using canvas for smoother animation. And JavaScript functions to control the game loop, the winning and losing scenarios, spwan falling exam papers .the main logic includes tracking score and misses, drawing on the canvas, and resetting the game with a restart button.
+On the start page i added two buttons. "how to play" and "start game"
+## Things ill add if i had time
+- Papers getting actually sliced
+- every exam paper adds different amount of score
+- F exam paper makes u lose
