@@ -7,8 +7,8 @@ const paperImg = [
   "../assets/exam6.png"
 ]
 const gameBoard = document.getElementsByClassName("gameBoard")[0]
-const scoreDisplay = document.getElementById("score");
-const missesDisplay = document.getElementById("misses");
+const scoreDisplay = document.getElementById("score")
+const missesDisplay = document.getElementById("misses")
 const canvas = document.getElementById("myCanvas")
 const ctx = canvas.getContext("2d")
 const image = document.getElementById('school')
@@ -17,6 +17,7 @@ const slicerAudio = document.getElementById('sliceAudio')
 const missAudio = document.getElementById('missAudio')
 const winAudio = document.getElementById('winAudio')
 const restartBtn = document.getElementsByClassName("myButton")[0]
+
 
 let score = 0
 let misses = 0
@@ -138,6 +139,7 @@ window.addEventListener("DOMContentLoaded", function () {
     const mouseY = event.clientY - rect.top;
     checkSlice(mouseX, mouseY);
   });
+
   restartBtn.addEventListener("click",()=>{
 score = 0
 misses = 0
