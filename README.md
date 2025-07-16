@@ -3,9 +3,12 @@
 ## Introduction
 I made this game as a project of the Software Engineering bootcamp in General Assembly. I was asked to make a game using HTML, JavaScript AND CSS.
 My game is inspired by Fruit Ninja. Basically it has papers falling from the top, and the player has to collect them. Missing three papers leads u to lose the game + Collecting 5 papers makes u win it.
-## Technologies
+## Used
 - HTML
 - CSS
 - JavaScript
 - Canvas
 - Git
+- Canva (to design the background)
+- Pixilart (to paint images)
+  
