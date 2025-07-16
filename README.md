@@ -23,3 +23,6 @@ On the start page i added two buttons. "how to play" and "start game"
 - Papers getting actually sliced
 - every exam paper adds different amount of score
 - F exam paper makes u lose
+## Attributions
+- All images are painted by me using Pixilart
+- mixkit (sounds effect)
