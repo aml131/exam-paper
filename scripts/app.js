@@ -26,9 +26,9 @@ let gameOver = false
 let youWon= false
 /*-------------------------------- Functions --------------------------------*/
 function spawnPaper() {
-  const img = new Image();
+  const img = new Image()
   const randomIndex = Math.floor(Math.random() * paperImg.length);
-  img.src = paperImg[randomIndex];
+  img.src = paperImg[randomIndex]
 
   const paper = {
     x: Math.random() * (canvas.width - 80),
@@ -41,23 +41,23 @@ function spawnPaper() {
     sliced: false
   };
 
-  papers.push(paper);
+  papers.push(paper)
 }
 
 function updatePapers() {
   for (const paper of papers) {
-    paper.y += paper.speedY;
-    paper.speedY += paper.gravity;
+    paper.y += paper.speedY
+    paper.speedY += paper.gravity
   }
 
   for (let i = papers.length - 1; i >= 0; i--) {
-    const paper = papers[i];
+    const paper = papers[i]
     if (paper.y > canvas.height && !paper.sliced) {
-      papers.splice(i, 1);
+      papers.splice(i, 1)
       misses++;
-      missesDisplay.textContent = misses;
+      missesDisplay.textContent = misses
       missAudio.play()
-      if (misses >= 3) gameOver = true;
+      if (misses >= 3) gameOver = true
 
     }
   }
@@ -72,19 +72,19 @@ function drawPapers() {
 }
 
 function drawGameOver() {
-  ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = "#fff";
-  ctx.font = "60px Pixelify Sans, sans-serif";
-  ctx.textAlign = "center";
+  ctx.fillStyle = "rgba(0, 0, 0, 0.7)"
+  ctx.fillRect(0, 0, canvas.width, canvas.height)
+  ctx.fillStyle = "#fff"
+  ctx.font = "60px Pixelify Sans, sans-serif"
+  ctx.textAlign = "center"
   ctx.fillText("You Lose", canvas.width / 2, canvas.height / 2);
 }
 function drawYouWon() {
-  ctx.fillStyle = "rgba(26, 255, 0, 0.7)";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = "#fff";
-  ctx.font = "60px Pixelify Sans, sans-serif";
-  ctx.textAlign = "center";
+  ctx.fillStyle = "rgba(26, 255, 0, 0.7)"
+  ctx.fillRect(0, 0, canvas.width, canvas.height)
+  ctx.fillStyle = "#fff"
+  ctx.font = "60px Pixelify Sans, sans-serif"
+  ctx.textAlign = "center"
   ctx.fillText("You Won !", canvas.width / 2, canvas.height / 2);
 }
 function checkSlice(mouseX, mouseY) {
@@ -96,11 +96,11 @@ function checkSlice(mouseX, mouseY) {
       mouseY >= paper.y &&
       mouseY <= paper.y + paper.height
     ) {
-      paper.sliced = true;
-      score++;
-      scoreDisplay.textContent = score;
+      paper.sliced = true
+      score++
+      scoreDisplay.textContent = score
       slicerAudio.play()
-      if (score >= 5) youWon = true;
+      if (score >= 5) youWon = true
 
     }
   }
@@ -120,25 +120,25 @@ function gameLoop() {
     return
   }
 
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  updatePapers();
-  drawPapers();
-  requestAnimationFrame(gameLoop);
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+  updatePapers()
+  drawPapers()
+  requestAnimationFrame(gameLoop)
 }
 
 
 /*----------------------------- Event Listeners -----------------------------*/
 window.addEventListener("DOMContentLoaded", function () {
 
-  setInterval(spawnPaper, 1000);
+  setInterval(spawnPaper, 1000)
   gameLoop();
 
   canvas.addEventListener("mousemove", function (event) {
-    const rect = canvas.getBoundingClientRect();
-    const mouseX = event.clientX - rect.left;
-    const mouseY = event.clientY - rect.top;
-    checkSlice(mouseX, mouseY);
-  });
+    const rect = canvas.getBoundingClientRect()
+    const mouseX = event.clientX - rect.left
+    const mouseY = event.clientY - rect.top
+    checkSlice(mouseX, mouseY)
+  })
 
   restartBtn.addEventListener("click",()=>{
 score = 0
@@ -153,4 +153,4 @@ youWon= false
 
   gameLoop()
   })
-});
+})
