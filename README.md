@@ -21,8 +21,10 @@ The game was made using canvas for smoother animation. And JavaScript functions 
 On the start page i added two buttons. "how to play" and "start game"
 ## Things id add if i had time
 - Papers getting actually sliced
-- every exam paper adds different amount of score
+- every exam paper adds different amount of score, like A+ is hardest to catch but adds more score when D is the easiest to catch but gives less score
 - F exam paper makes u lose
+## Biggest challange
+controlling mouse with paper, and making sure papers only fall inside the canvas
 ## Attributions
 - All images are painted by me using Pixilart
 - mixkit (sounds effect)
