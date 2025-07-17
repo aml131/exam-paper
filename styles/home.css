@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 body{
 font-family: "Pixelify Sans", sans-serif;
-color: rgb(0, 0, 0);
-font-size: 50px;
+color: #da3822;
+font-size: 60px;
 background-image: url('../assets/background.png');
 background-size: cover;
 background-repeat: no-repeat;
@@ -19,14 +19,69 @@ background-attachment: fixed;
   text-align: center;
 }
 
-button {
+#playBtn {
    font-family: "Pixelify Sans", sans-serif;
     color: white;
-    background-color: #03643d1e;
-    height: 90px;
+    background-color: #03643d37;
+    height: 80px;
     width: 170px;
-    font-size: 60px;
+    font-size: 50px;
     border:none;
     border-radius:30px;
     box-shadow: #4A4539;
+}
+#How2 {
+   font-family: "Pixelify Sans", sans-serif;
+    color: white;
+    background-color: #03643d1e;
+    height: 80px;
+    width: 300px;
+    font-size: 50px;
+    border:none;
+    border-radius:30px;
+    box-shadow: #4A4539;
+}
+
+
+.modal {
+  background-color: rgba(0,0,0,0,3);
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.open{
+  opacity: 1;
+  z-index: 999;
+}
+
+.insideModal{
+  opacity: 90%;
+  font-size: 40px;
+  color:black;
+  border-radius: 30px;
+    background-color: aliceblue;
+
+}
+
+#close{
+  font-family: "Pixelify Sans", sans-serif;
+    color: white;
+    background-color: #ff00006c;
+    height: 80px;
+    width: 170px;
+    font-size: 50px;
+    border:none;
+    border-radius:30px;
+    box-shadow: #4A4539;
+    margin-bottom: 5%;
+
 }
