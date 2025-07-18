@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slice Exam Paper </title>
+  <link rel="stylesheet" href="styles/main.css">
+
+</head>
+
+<body>
+  <div class="text-1">
+    <p>EXAM SLICE</p>
+    <div class="ScoreBoard">
+        <img src="assets/heart.png" alt="heart"><span id ="misses">0</span>
+       <img src="assets/score.png" alt="star"> <span id ="score">0</span>
+      </div>
+    </div>
+  </div>
+  <div class="gameBoard">
+    <canvas id="myCanvas" width="900" height=500>
+      </canvas>
+  </div>
+  <div class="myButton">
+     <button>restart</button>
+  </div>
+    
+
+  
+  <audio id="gameOverAudio" src="./assets/gameOver.mp3"></audio>
+  <audio id="sliceAudio" src="./assets/slice.mp3"></audio>
+  <audio id="missAudio" src="./assets/miss.mp3"></audio>
+  <audio id="winAudio" src="./assets/win.mp3"></audio>
+
+
+  <script src='scripts/app.js'> </script>
+</body>
+
+</html>

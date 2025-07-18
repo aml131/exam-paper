@@ -1,39 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Slice Exam Paper </title>
-  <link rel="stylesheet" href="styles/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slice Exam Paper</title>
+      <link rel="stylesheet" href="styles/home.css">
 
 </head>
-
 <body>
-  <div class="text-1">
-    <p>EXAM SLICE</p>
-    <div class="ScoreBoard">
-        <img src="assets/heart.png" alt="heart"><span id ="misses">0</span>
-       <img src="assets/score.png" alt="star"> <span id ="score">0</span>
+    <div class="frontPage">
+    <h1>START NEW GAME</h1>
+    <div id="btn">
+    <button id="playBtn">play</button>
+    <!-- how 2 play modal + btn -->
+    <button id="How2">How to play</button>
+
+    <div class="modal" id="modal">
+      <div class="insideModal">
+        <ul>
+          <li>Use ur mouse to catch the papers</li>
+          <li>You'll lose if u miss more than 3 papers</li>
+          <li>You'll win when u cath 5 papers</li>
+          <li>click start to begin + restart to repeat</li>
+        </ul>
+                <button id = 'close'>Close</button>
       </div>
     </div>
-  </div>
-  <div class="gameBoard">
-    <canvas id="myCanvas" width="900" height=500>
-      </canvas>
-  </div>
-  <div class="myButton">
-     <button>restart</button>
-  </div>
     
-
-  
-  <audio id="gameOverAudio" src="assets/gameOver.mp3"></audio>
-  <audio id="sliceAudio" src="assets/slice.mp3"></audio>
-  <audio id="missAudio" src="assets/miss.mp3"></audio>
-  <audio id="winAudio" src="assets/win.mp3"></audio>
-
-
-  <script src='scripts/app.js'> </script>
+    </div>
+    </div>
 </body>
-
+  <script src='scripts/home.js'> </script>
 </html>

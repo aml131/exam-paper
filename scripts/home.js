@@ -1,6 +1,6 @@
 const playBtn = document.getElementById('playBtn')
 playBtn.addEventListener("click",()=>{
-  this.window.location.href='../index.html'
+  this.window.location.href='../game.html'
 })
 //the modal
 const openBtn = document.getElementById('How2')
